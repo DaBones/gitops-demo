@@ -10,6 +10,14 @@ spec:
         revision: HEAD
         directories:
           - path: apps/*
+    - list:
+        elements:
+          - env: dev
+            path: apps/dev
+          - env: staging
+            path: apps/staging
+          - env: prod
+            path: apps/prod
   template:
     metadata:
       name: '{{path.basename}}-guestbook'
@@ -26,5 +34,3 @@ spec:
         automated:
           prune: true
           selfHeal: true
-        syncOptions:
-          - CreateNamespace=true
